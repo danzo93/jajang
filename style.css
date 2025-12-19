@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+html{
+    overflow-x: hidden;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to right, rgb(255,255,255), rgb(254,215,173));
+}
+
+/* ================= NAVBAR ================= */
+nav{
+    width: 100%;
+    height: 10vh;
+    position: sticky;
+    top: 0;
+}
+
+.nav-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo{
+    color: black;
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+.logo span{
+    color: rgb(109,67,0);
+    text-shadow: 0 0 10px rgb(109,67,0);
+}
+
+.hamburg, .cancel{
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 2rem;
+    display: none;
+}
+
+/* ================= LINKS ================= */
+.nav-container .links{
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+}
+
+.nav-container .links a{
+    position: relative;
+    font-size: 1.2rem;
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nav-container .links a::before{
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-color: rgb(109,67,0);
+    transition: 0.3s;
+}
+
+.nav-container .links a:hover::before{
+    width: 100%;
+}
+
+.nav-container .links a:hover{
+    color: rgb(109,67,0);
+}
+
+/* ================= CONTACT BUTTON ================= */
+.nav-container .contact-btn{
+    padding: 5px 20px;
+    border-radius: 20px;
+    border: 2px solid rgb(109,67,0);
+    transition: 0.3s;
+}
+
+.nav-container .contact-btn a{
+    color: black;
+    text-decoration: none;
+}
+
+.nav-container .contact-btn:hover{
+    background-color: rgb(109,67,0);
+}
+
+.nav-container .contact-btn:hover a{
+    color: white;
+}
+
+/* ================= SECTION ================= */
+section{
+    width: 100%;
+    height: 90vh;
+}
+
+/* ================= MAIN ================= */
+.main-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* ===== FOTO BULAT ===== */
+.main-container .image{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid rgb(109,67,0);
+    box-shadow: 0 0 25px rgba(109,67,0,0.6);
+}
+
+.main-container .image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ================= CONTENT ================= */
+.main-container .content{
+    width: 40%;
+    color: black;
+}
+
+.content h1{
+    font-size: clamp(1.5rem, 2rem + 3vw, 3rem);
+}
+
+.content h1 span{
+    color: rgb(109,67,0);
+    text-shadow: 0 0 10px rgb(109,67,0);
+}
+
+/* ===== TYPEWRITER ===== */
+.content .typewriter{
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.content .typewriter span{
+    color: rgb(109,67,0);
+    font-size: 2.5rem;
+    position: relative;
+}
+
+.typewriter span::before{
+    content: "Developer";
+    animation: words 10s infinite;
+}
+
+.typewriter span::after{
+    content: "";
+    position: absolute;
+    right: -8px;
+    width: 3px;
+    height: 100%;
+    background-color: black;
+}
+
+@keyframes cursor{
+    50%{opacity: 0;}
+}
+
+@keyframes words{
+    0%,50%{content: "Developer";}
+    51%,100%{content: "Designer";}
+}
+
+.content p{
+    margin: 15px 0;
+    font-size: 1rem;
+}
+
+/* ================= SOCIAL ================= */
+.social-links i{
+    width: 3rem;
+    height: 3rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgb(109,67,0);
+    border-radius: 50%;
+    color: rgb(109,67,0);
+    margin: 10px;
+    transition: 0.3s;
+}
+
+.social-links i:hover{
+    background-color: rgb(109,67,0);
+    color: white;
+    transform: scale(1.2);
+    box-shadow: 0 0 15px rgb(109,67,0);
+}
+
+/* ================= BUTTON ================= */
+.content button{
+    margin-top: 20px;
+    padding: 12px 30px;
+    border: none;
+    background-color: rgb(109,67,0);
+    color: white;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.content button:hover{
+    background-color: transparent;
+    color: rgb(109,67,0);
+    border: 2px solid rgb(109,67,0);
+    box-shadow: 0 0 25px rgb(109,67,0);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width:884px){
+    body{
+        height: auto;
+    }
+
+    .nav-container .links{
+        display: none;
+    }
+
+    .hamburg{
+        display: block;
+    }
+
+    .main-container{
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .main-container .content{
+        width: 85%;
+        text-align: center;
+    }
+}
